@@ -27,14 +27,14 @@ public class ProductResource {
 
 	@GetMapping
 	public ResponseEntity<List<Product>> findAll() {
-		List<Product> Products = service.findAll();
-		return ResponseEntity.ok().body(Products);
+		List<Product> products = service.findAll();
+		return ResponseEntity.ok().body(products);
 	}
 
 	@GetMapping(value = "/{id}")
 	public ResponseEntity<Product> findById(@PathVariable Long id) {
-		Product Product = service.findById(id);
-		return ResponseEntity.ok().body(Product);
+		Product product = service.findById(id);
+		return ResponseEntity.ok().body(product);
 	}
 
 	@PostMapping
