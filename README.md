@@ -21,4 +21,8 @@ GET - http://localhost:8080/users/ -> Retorna todos os usuários<br/>
 GET - http://localhost:8080/users/1 -> Retorna o usuário de ID 1<br/>
 POST - http://localhost:8080/users/ -> Adiciona um usuário com informações via JSON<br/>
 DELETE - http://localhost:8080/users/3 -> Deleta o usuário de ID 3<br/>
+<<<<<<< HEAD
 PUT - http://localhost:8080/users/7 -> Atualiza o usuário de ID 7
+=======
+PUT - http://localhost:8080/users/7 -> Atualiza o usuário de ID 7
+>>>>>>> 2356b424be19d257c7439aa4429b34c0310fc4f2
