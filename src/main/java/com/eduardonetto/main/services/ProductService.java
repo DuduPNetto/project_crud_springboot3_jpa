@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.eduardonetto.main.entities.Product;
 import com.eduardonetto.main.repositories.ProductRepository;
+import com.eduardonetto.main.services.exceptions.ResourceNotFoundException;
 
 @Service
 public class ProductService {
@@ -20,8 +21,8 @@ public class ProductService {
 	}
 
 	public Product findById(Long id) {
-		Optional<Product> obj = repository.findById(id);
-		return obj.get();
+		Optional<Product> product = repository.findById(id);
+		return product.orElseThrow(() -> new ResourceNotFoundException(id));
 	}
 
 }

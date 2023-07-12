@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.eduardonetto.main.entities.Order;
 import com.eduardonetto.main.repositories.OrderRepository;
+import com.eduardonetto.main.services.exceptions.ResourceNotFoundException;
 
 @Service
 public class OrderService {
@@ -20,8 +21,8 @@ public class OrderService {
 	}
 
 	public Order findById(Long id) {
-		Optional<Order> obj = repository.findById(id);
-		return obj.get();
+		Optional<Order> order = repository.findById(id);
+		return order.orElseThrow(() -> new ResourceNotFoundException(id));
 	}
 
 }
